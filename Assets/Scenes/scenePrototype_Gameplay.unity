@@ -409,9 +409,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586f28142a3f2b24089305c21d93d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2D: {fileID: 775755555}
+  myRigidbody: {fileID: 775755555}
   friction: {x: -0.1, y: 0}
   speed: 5
+  speedRun: 9
   forceJump: 6
 --- !u!1 &1342259260
 GameObject:
