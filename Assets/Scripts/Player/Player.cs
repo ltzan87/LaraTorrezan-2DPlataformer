@@ -33,11 +33,11 @@ public class Player : MonoBehaviour
             _currentSpeed = speed;
         
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.LeftArrow))
             {
                 myRigidbody.velocity = new Vector2(-_currentSpeed, myRigidbody.velocity.y);
             }
-            else if(Input.GetKey(KeyCode.D))
+            else if(Input.GetKey(KeyCode.RightArrow))
             {
                 myRigidbody.velocity = new Vector2(_currentSpeed, myRigidbody.velocity.y);
             }
@@ -46,10 +46,15 @@ public class Player : MonoBehaviour
             {
                 myRigidbody.velocity += friction;
             }
-            else if(myRigidbody.velocity.x > 0)
+            else if(myRigidbody.velocity.x < 0)
             {
                 myRigidbody.velocity -= friction;
             }
+
+        if(Mathf.Abs(myRigidbody.velocity.x) < Mathf.Abs(friction.x))
+        {
+            myRigidbody.velocity = new Vector2(0, myRigidbody.velocity.y);
+        }
     }
 
     private void HandleJump() {
