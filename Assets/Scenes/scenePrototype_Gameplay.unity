@@ -905,8 +905,8 @@ MonoBehaviour:
   - {fileID: 542228887}
   - {fileID: 245781955}
   m_Bounds:
-    m_Center: {x: -0.099610806, y: -0.036024094, z: 0}
-    m_Extent: {x: 4.0696106, y: 2.5173335, z: 0}
+    m_Center: {x: 0.086349726, y: 0.08315396, z: 0}
+    m_Extent: {x: 3.88365, y: 2.3981557, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &776274122
@@ -1002,7 +1002,7 @@ Transform:
   m_GameObject: {fileID: 870807881}
   m_LocalRotation: {x: 0, y: 0, z: -0.003298168, w: 0.9999946}
   m_LocalPosition: {x: 2.053889, y: -0.0000002780074, z: 0}
-  m_LocalScale: {x: 1.3, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 71802876}
   m_RootOrder: 0
@@ -1390,6 +1390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562370691}
   - component: {fileID: 1562370690}
+  - component: {fileID: 1562370692}
   m_Layer: 0
   m_Name: Satelite
   m_TagString: Untagged
@@ -1431,6 +1432,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562370692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562370689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648d4cbf929577d45b6f2b62a58d863c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1562370690}
+  keyToTrigger: 97
+  triggerToPlay: AttentionBool
 --- !u!1 &1582540716
 GameObject:
   m_ObjectHideFlags: 0
