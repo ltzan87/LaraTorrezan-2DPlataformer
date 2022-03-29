@@ -6,6 +6,6 @@ public class CollactableCoin : CollactableBase
 {
     protected override void OnCollect() {
         base.OnCollect();
-        ItemManager.Instace.AddCoins();
+       // ItemManager.Instace.AddCoins();
     }
 }
