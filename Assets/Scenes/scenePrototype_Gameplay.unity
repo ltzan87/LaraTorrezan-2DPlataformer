@@ -902,6 +902,7 @@ GameObject:
   - component: {fileID: 287037873}
   - component: {fileID: 287037875}
   - component: {fileID: 287037874}
+  - component: {fileID: 287037876}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1025,6 +1026,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287037872}
   m_CullTransparentMesh: 1
+--- !u!114 &287037876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287037872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a477f9c413135b43a71d9ab94c57922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soInt: {fileID: 11400000, guid: e1a47501e2273ba4b9c66fb2fa66f5b7, type: 2}
+  uiTextValue: {fileID: 287037874}
 --- !u!1 &300683378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74ca8b60c84b814f82b527bb2317f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: e1a47501e2273ba4b9c66fb2fa66f5b7, type: 2}
   uiTextCoins: {fileID: 287037874}
 --- !u!4 &738751847
 Transform:
