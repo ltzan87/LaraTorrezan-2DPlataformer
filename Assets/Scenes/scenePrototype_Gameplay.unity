@@ -2386,9 +2386,9 @@ MonoBehaviour:
   speed: 7
   speedRun: 14
   forceJump: 8
-  jumpScaleY: 1
-  jumpScaleX: 0.85
-  animationDuration: 0.3
+  soJumpScaleX: {fileID: 11400000, guid: 2cb8e5a563926a2468f30210675d68ab, type: 2}
+  soJumpScaleY: {fileID: 11400000, guid: 457d615261e5fc849915c5310a39152c, type: 2}
+  soAnimationDuration: {fileID: 11400000, guid: afa9175ebefcb534588a9ff5ef831e8e, type: 2}
   ease: 27
   boolRun: Run
   triggerDeath: Death
@@ -4368,7 +4368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
