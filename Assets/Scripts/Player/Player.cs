@@ -11,22 +11,24 @@ public class Player : MonoBehaviour
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
 
-    public Animator animator;
+    //public Animator animator;
 
     private float _currentSpeed;
-
+    private Animator _currentPlayer;
 
     private void Awake() {
         if(healthBase != null)
         {
             healthBase.OnKill += OnPlayerKill;
         }
+
+        _currentPlayer = Instantiate(soPlayerSetup.player, transform);
     }
 
     private void OnPlayerKill() {
         healthBase.OnKill -= OnPlayerKill;
 
-        animator.SetTrigger(soPlayerSetup.triggerDeath);
+        _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
     }
 
     private void Update() {
@@ -39,13 +41,13 @@ public class Player : MonoBehaviour
         {
             _currentSpeed = soPlayerSetup.speedRun;
 
-            animator.speed = 1.5f;
+            _currentPlayer.speed = 1.5f;
         }
         else
         {
             _currentSpeed = soPlayerSetup.speed;
 
-            animator.speed = 1;
+            _currentPlayer.speed = 1;
         }
 
         if(Input.GetKey(KeyCode.LeftArrow))
@@ -56,7 +58,7 @@ public class Player : MonoBehaviour
                     myRigidbody.transform.DOScaleX(-1, soPlayerSetup.playerSwipeDuration);
                 }
 
-                animator.SetBool(soPlayerSetup.boolRun, true);
+                _currentPlayer.SetBool(soPlayerSetup.boolRun, true);
             }
             else if(Input.GetKey(KeyCode.RightArrow))
             {
@@ -66,11 +68,11 @@ public class Player : MonoBehaviour
                     myRigidbody.transform.DOScaleX(1, soPlayerSetup.playerSwipeDuration);
                 }
 
-                animator.SetBool(soPlayerSetup.boolRun, true);
+                _currentPlayer.SetBool(soPlayerSetup.boolRun, true);
             }
             else
             {
-                animator.SetBool(soPlayerSetup.boolRun, false);
+                _currentPlayer.SetBool(soPlayerSetup.boolRun, false);
             }
 
             if(myRigidbody.velocity.x > 0)
