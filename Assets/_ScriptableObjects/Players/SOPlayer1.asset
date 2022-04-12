@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6413013834153556191, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
   soStringName: {fileID: 11400000, guid: 1bcd6470a777e084e9a2bce735d4bd90, type: 2}
-  friction: {x: 0.3, y: 0}
-  speed: 7
-  speedRun: 14
-  forceJump: 8
-  jumpScaleY: 1
-  jumpScaleX: 0.95
+  friction: {x: 0.1, y: 0}
+  speed: 8
+  speedRun: 16
+  forceJump: 10
+  jumpScaleY: 1.1
+  jumpScaleX: 1
   animationDuration: 0.3
   ease: 27
   boolRun: Run

@@ -77,11 +77,11 @@ public class Player : MonoBehaviour
 
             if(myRigidbody.velocity.x > 0)
             {
-                myRigidbody.velocity += soPlayerSetup.friction;
+                myRigidbody.velocity -= soPlayerSetup.friction;
             }
             else if(myRigidbody.velocity.x < 0)
             {
-                myRigidbody.velocity -= soPlayerSetup.friction;
+                myRigidbody.velocity += soPlayerSetup.friction;
             }
 
         if(Mathf.Abs(myRigidbody.velocity.x) < Mathf.Abs(soPlayerSetup.friction.x))
