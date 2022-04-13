@@ -10,9 +10,11 @@ public class CollactableBase : MonoBehaviour
     public float timeToHide = 3f;
     public GameObject graphicItem;
 
+    protected Collider2D _collider;
 
     private void Awake() {
         //if (particleSystem != null) particleSystem.transform.SetParent(null);
+        Init();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -22,9 +24,13 @@ public class CollactableBase : MonoBehaviour
         }
     }
 
+    protected virtual void Init() {
+        _collider = GetComponent<Collider2D>();
+    }
+
     protected virtual void Collect() {
         if(graphicItem != null) graphicItem.SetActive(false);
-        Invoke("HideObject", timeToHide);
+        Invoke(nameof(HideObject), timeToHide);
         OnCollect();       
     }
 
