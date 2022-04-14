@@ -36,9 +36,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void IsGrounded() {
-        Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
-        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+    private bool IsGrounded() {
+        bool grounded = Physics2D.Raycast(transform.position, -Vector2.up, spaceToGround);
+        Color color = grounded ? Color.red : Color.magenta;
+        Debug.DrawRay(transform.position, -Vector2.up, color);
+        return grounded;
+        //Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
+        //return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
     }
 
     private void OnPlayerKill() {
@@ -122,7 +126,7 @@ public class Player : MonoBehaviour
 
     private void PlayJumpVFX() {
         //if (jumpVFX != null) jumpVFX.Play();
-        vfx_Manager.Instance.PlayVFXByType(vfx_Manager.VFXType.JUMP, transform.position);
+        Vfx_Manager.Instance.PlayVFXByType(Vfx_Manager.VFXType.JUMP, transform.position);
     }
 
     private void HandleScaleJump() {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
 
-public class vfx_Manager : Singleton<vfx_Manager>
+public class Vfx_Manager : Singleton<Vfx_Manager>
 {
     public enum VFXType
     {
@@ -30,6 +30,6 @@ public class vfx_Manager : Singleton<vfx_Manager>
 [System.Serializable]
 public class VFXManagerSetup
 {
-    public vfx_Manager.VFXType vfxType;
+    public Vfx_Manager.VFXType vfxType;
     public GameObject prefab;
 }

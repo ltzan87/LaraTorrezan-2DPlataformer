@@ -1125,7 +1125,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.98039216}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.5882353}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -2206,8 +2206,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.79816467, g: 0.9150943, b: 0.17697577, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.79816467, g: 0.9150943, b: 0.17697577, a: 0.9019608}
+        key1: {r: 1, g: 1, b: 1, a: 0.9019608}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2223,7 +2223,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 64379
+        atime1: 65535
         atime2: 0
         atime3: 0
         atime4: 0
@@ -12028,6 +12028,10 @@ MonoBehaviour:
   myRigidbody: {fileID: 775755555}
   healthBase: {fileID: 775755557}
   soPlayerSetup: {fileID: 11400000, guid: 93b708b5efd36934982b8df4d772ef42, type: 2}
+  collider2D: {fileID: 775755552}
+  distToGround: 0
+  spaceToGround: 0.1
+  jumpVFX: {fileID: 657235779}
 --- !u!114 &775755557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15451,6 +15455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041320522}
+  - component: {fileID: 2041320523}
   m_Layer: 0
   m_Name: VFXManager
   m_TagString: Untagged
@@ -15472,6 +15477,21 @@ Transform:
   m_Father: {fileID: 2038584576}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2041320523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041320521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815e27431b01f4b438fe538014e143d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxSetup:
+  - vfxType: 0
+    prefab: {fileID: 657235776}
 --- !u!1001 &2096040607
 PrefabInstance:
   m_ObjectHideFlags: 0
