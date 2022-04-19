@@ -12,6 +12,9 @@ public class CollactableBase : MonoBehaviour
 
     protected Collider2D _collider;
 
+    [Header("Sounds")]
+    public AudioSource audioSource;
+
     private void Awake() {
         //if (particleSystem != null) particleSystem.transform.SetParent(null);
         Init();
@@ -40,5 +43,6 @@ public class CollactableBase : MonoBehaviour
 
     protected virtual void OnCollect() {
         if (particleSystem != null) particleSystem.Play();
+        if (audioSource != null) audioSource.Play();
     }
 }
