@@ -6,7 +6,7 @@ public class CollactableBase : MonoBehaviour
 {  
     public string compareTag = "Player";
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem particleSystemCoin;
     public float timeToHide = 3f;
     public GameObject graphicItem;
 
@@ -42,7 +42,7 @@ public class CollactableBase : MonoBehaviour
     }
 
     protected virtual void OnCollect() {
-        if (particleSystem != null) particleSystem.Play();
+        if (particleSystemCoin != null) particleSystemCoin.Play();
         if (audioSource != null) audioSource.Play();
     }
 }

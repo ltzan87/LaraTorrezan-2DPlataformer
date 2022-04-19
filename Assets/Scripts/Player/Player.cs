@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     //public Animator animator;
 
     [Header("Jump Collision Check")]
-    public Collider2D collider2D;
+    public Collider2D colliderPlayer;
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
@@ -30,9 +30,9 @@ public class Player : MonoBehaviour
 
         _currentPlayer = Instantiate(soPlayerSetup.player, transform);
 
-        if(collider2D != null)
+        if(colliderPlayer != null)
         {
-            distToGround = collider2D.bounds.extents.y;
+            distToGround = colliderPlayer.bounds.extents.y;
         }
     }
 
