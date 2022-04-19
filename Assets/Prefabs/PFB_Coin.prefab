@@ -175,10 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compareTag: Player
-  particleSystem: {fileID: 7350641666407422258}
+  particleSystemCoin: {fileID: 0}
   timeToHide: 3
   graphicItem: {fileID: 9065553742005398826}
   audioSource: {fileID: 1159102073246089461}
+  colliderCoin: {fileID: 782287371596785800}
 --- !u!58 &782287371596785800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -337,10 +338,5 @@ PrefabInstance:
 --- !u!4 &7350641666407422259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329632287530657653, guid: 8762d7827ff85ef4e8a5a29e233ab466, type: 3}
-  m_PrefabInstance: {fileID: 1556686125522091590}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7350641666407422258 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8329632287530657652, guid: 8762d7827ff85ef4e8a5a29e233ab466, type: 3}
   m_PrefabInstance: {fileID: 1556686125522091590}
   m_PrefabAsset: {fileID: 0}
