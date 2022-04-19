@@ -8,15 +8,22 @@ public class GunBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShoot = .3f;
     public Transform playerSideReference;
+    public KeyCode keyCode = KeyCode.S;
+    public AudioRandomPlayAudioClips randomShoot;
 
     private Coroutine _currentCoroutine;
 
+
+    private void Awake() {
+        playerSideReference = GameObject.FindObjectOfType<Player>().transform;
+    }
+
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(keyCode))
         {
             _currentCoroutine = StartCoroutine(StartShoot());
         }
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(keyCode))
         {
             if (_currentCoroutine != null) 
                 StopCoroutine(_currentCoroutine);
@@ -32,6 +39,8 @@ public class GunBase : MonoBehaviour
     }
 
     private void Shoot() {
+        if(randomShoot != null) randomShoot.PlayRandom();
+
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
         projectile.side = playerSideReference.transform.localScale.x;
