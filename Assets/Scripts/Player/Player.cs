@@ -48,20 +48,17 @@ public class Player : MonoBehaviour
         //return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
     }
 
-    private void OnPlayerKill() {
-        healthBase.OnKill -= OnPlayerKill;
-
-        _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
-    }
-
-    IEnumerator LoadLevelAfterDelay(float delayToOpenScene) {
+    public IEnumerator LoadLevelAfterDelay(float delayToOpenScene) {
         yield return new WaitForSeconds(delayToOpenScene);
         SceneManager.LoadScene(1);
-    }    
+    } 
 
-    private void Start() {
-        //StartCoroutine(LoadLevelAfterDelay(delayToOpenScene));
+    private void OnPlayerKill() {
+        healthBase.OnKill -= OnPlayerKill;
+        _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
+        StartCoroutine(LoadLevelAfterDelay(delayToOpenScene));
     }
+      
     private void Update() {
         IsGrounded();
         HandleJump();
