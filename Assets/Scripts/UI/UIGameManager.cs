@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using Ebac.Core.Singleton;
 
-public class UIGameManager : Singleton<ItemManager>
+public class UIGameManager : Singleton<UIGameManager>
 {
     public TextMeshProUGUI uiTextCoins;
 
 
-    public static void UpdateTextCoins(string s) {
+    public void UpdateTextCoins(string s) {
         Instance.uiTextCoins.text = s;
     }
 }

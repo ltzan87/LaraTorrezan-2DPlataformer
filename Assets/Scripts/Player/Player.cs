@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class Player : MonoBehaviour
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
 
     private float _currentSpeed;
     private Animator _currentPlayer;
+
+    public float delayToOpenScene = 3.5f;
 
     private void Awake() {
         if(healthBase != null)
@@ -51,6 +54,14 @@ public class Player : MonoBehaviour
         _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
     }
 
+    IEnumerator LoadLevelAfterDelay(float delayToOpenScene) {
+        yield return new WaitForSeconds(delayToOpenScene);
+        SceneManager.LoadScene(1);
+    }    
+
+    private void Start() {
+        //StartCoroutine(LoadLevelAfterDelay(delayToOpenScene));
+    }
     private void Update() {
         IsGrounded();
         HandleJump();

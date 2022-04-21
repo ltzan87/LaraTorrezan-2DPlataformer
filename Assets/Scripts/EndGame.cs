@@ -6,6 +6,7 @@ public class EndGame : MonoBehaviour
 {
     public string compareTag = "Player";
     public GameObject uiEndGame;
+    public GameObject uiPause;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.transform.CompareTag(compareTag))
@@ -15,6 +16,7 @@ public class EndGame : MonoBehaviour
     }
 
     public void CallEndGame() {
+        uiPause.SetActive(false);
         uiEndGame.SetActive(true);
     }
 }
