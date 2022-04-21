@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
     private void OnPlayerKill() {
         healthBase.OnKill -= OnPlayerKill;
         _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
-        StartCoroutine(LoadLevelAfterDelay(delayToOpenScene));
     }
       
     private void Update() {
